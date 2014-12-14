@@ -23,18 +23,18 @@ atlas* commands.
 <h5>Macro</h5>
 <p>
 In order to alter the macro, look at the
-<a href="blob/master/src/main/java/no/ntnu/assignmentsystem/confluedit/EditorMacro.java">EditorMacro.java</a>-file.
-It uses the template manager and <a href="blob/master/src/main/resources/templates/editor-macro.vm">editor-macro.vm</a>
+<a href="src/main/java/no/ntnu/assignmentsystem/confluedit/EditorMacro.java">EditorMacro.java</a>-file.
+It uses the template manager and <a href="src/main/resources/templates/editor-macro.vm">editor-macro.vm</a>
 as template for rendering the content on the web page. The rendered content will be altered by the
- <a href="blob/master/src/main/resources/js/confluedit.js">confluedit.js</a>-file to show content using the Ace editor.
+ <a href="src/main/resources/js/confluedit.js">confluedit.js</a>-file to show content using the Ace editor.
 </p>
 
 <h5>REST</h5>
 <p>
 In order to connect to the backend, the
-<a href="/blob/master/src/main/java/no/ntnu/assignmentsystem/confluedit/rest/EditorRestResource.java">EditorRestResource</a>
+<a href="src/main/java/no/ntnu/assignmentsystem/confluedit/rest/EditorRestResource.java">EditorRestResource</a>
 is used. It handles requests at specific path(s), and responds with a
-<a href="blob/master/src/main/java/no/ntnu/assignmentsystem/confluedit/rest/EditorRestResourceModel.java">EditorRestResourceModel</a>
+<a href="src/main/java/no/ntnu/assignmentsystem/confluedit/rest/EditorRestResourceModel.java">EditorRestResourceModel</a>
 in either XML- or JSON-format.
 </p>
 

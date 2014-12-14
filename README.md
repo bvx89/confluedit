@@ -6,7 +6,9 @@ of the research is towards a novice course in object-oriented programming at NTN
 Technology), where the students can use a web editor to solve example problems or assignments.
 </p>
 
-<h3>Setting up</h3>
+<hr/>
+
+<h2>Setup</h2>
 <p>
 In order to run this project, the Atlassian Plugin SDK must be configured. Go through the
 <a href="https://developer.atlassian.com/docs/getting-started/set-up-the-atlassian-plugin-sdk-and-build-a-project">
@@ -15,8 +17,10 @@ you have configured your IDE to use the Maven provided in the Atlassian Plugin S
 atlas* commands.
 </p>
 
-<h3>Alter code modules</h3>
-<h4>Macro</h4>
+<hr/>
+
+<h2>Alter code modules</h2>
+<h5>Macro</h5>
 <p>
 In order to alter the macro, look at the
 <a href="blob/master/src/main/java/no/ntnu/assignmentsystem/confluedit/EditorMacro.java">EditorMacro.java</a>-file.
@@ -25,7 +29,7 @@ as template for rendering the content on the web page. The rendered content will
  <a href="blob/master/src/main/resources/js/confluedit.js">confluedit.js</a>-file to show content using the Ace editor.
 </p>
 
-<h4>REST</h4>
+<h5>REST</h5>
 <p>
 In order to connect to the backend, the
 <a href="/blob/master/src/main/java/no/ntnu/assignmentsystem/confluedit/rest/EditorRestResource.java">EditorRestResource</a>

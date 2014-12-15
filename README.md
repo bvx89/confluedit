@@ -12,9 +12,10 @@ Technology), where the students can use a web editor to solve example problems o
 <p>
 In order to run this project, the Atlassian Plugin SDK must be configured. Go through the
 <a href="https://developer.atlassian.com/docs/getting-started/set-up-the-atlassian-plugin-sdk-and-build-a-project">
-Atlassian Plugin SDK tutorial</a> to configure the environment and select an IDE to use for your development. When
-you have configured your IDE to use the Maven provided in the Atlassian Plugin SDK, you are ready to build using one of
-atlas* commands.
+Atlassian Plugin SDK tutorial</a> to configure the environment and select an IDE to use for your development.
+Clone this git repo to a local directory, and create a new project from the source code. When you have configured your
+IDE to use the Maven provided in the Atlassian Plugin SDK, you are ready to develop using one of the atlas-* commands
+listed at the end.
 </p>
 
 <hr/>

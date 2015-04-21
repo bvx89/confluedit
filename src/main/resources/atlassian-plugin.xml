@@ -8,33 +8,37 @@
     </plugin-info>
 
     <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="confluedit"/>
     <resource type="download" name="images/" location="/images"/>
-    
+
     <!-- add our web resources -->
     <web-resource key="confluedit-resources" name="confluedit Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
+
         <resource type="download" name="confluedit.css" location="/css/confluedit.css"/>
         <resource type="download" name="confluedit.js" location="/js/confluedit.js"/>
-        <resource type="velocity" name="template" location="/templates/editor-macro.vm"/>
+        <resource type="download" name="images/" location="/images"/>
 
         <context>confluedit</context>
     </web-resource>
 
-    <!-- publish our component -->
-    <component key="editorPluginComponent" class="no.ntnu.assignmentsystem.confluedit.EditorPluginComponentImpl" public="true">
-        <interface>no.ntnu.assignmentsystem.confluedit.EditorPluginComponent</interface>
-    </component>
-
+    <xhtml-macro name="confluedit-macro" class="no.hal.eclipsky.confluedit.EditorMacro"
+                 icon="/download/resources/${project.groupId}.${project.artifactId}/images/browserLogo.png" key="editor">
+        <category>confluence-content</category>
+        <description>Insert information to generate a eclipse project on the backend and achieve live coding</description>
+        <parameters>
+            <parameter name="task-id" type="string" required="true"/>
+            <parameter name="difficulty" type="string" required="true"/>
+            <parameter name="effort" type="string" required="true"/>
+            <parameter name="editable" type="boolean" required="true"/>
+        </parameters>
+    </xhtml-macro>
 
     <!-- import from the product container -->
     <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
 
-    <xhtml-macro name="editor" class="no.ntnu.assignmentsystem.confluedit.EditorMacro" key="editor">
-        <description>Inserts a live editor into the current page</description>
-    </xhtml-macro>
-
-    <rest name="My Rest Resource" key="my-rest-resource" path="/editorinit" version="1.0">
-        <description>The My Rest Resource Plugin</description>
+    <rest name="Confluedit" key="confluedit-rest" path="/editor" version="1.0">
+        <description>Rest Resource Plugin for setting up a connection with the backend</description>
     </rest>
+
 </atlassian-plugin>

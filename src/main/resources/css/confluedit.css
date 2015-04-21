@@ -1,4 +1,26 @@
-.editor {
+#confluedit-xtext {
+    display: none;
+}
+
+#confluedit-container {
+    background: url('images/loading.gif') #2b2828;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 800px;
-    height: 300px;
+    min-height: 600px;
+
+    -webkit-transition: width 0.5s; /* Safari */
+    transition: width 0.5s;
+}
+
+div#confluedit-editor {
+    background: #2b2828;
+    width: 800px;
+    min-height: 600px;
+}
+
+#confluedit-container iframe {
+    min-height: 750px;
+    border: none;
+    border-radius: 10px;
 }

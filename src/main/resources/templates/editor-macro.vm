@@ -1,9 +1,18 @@
+#requireResource("no.hal.eclipsky.confluedit:confluedit-resources")
 #requireResource("confluence.web.resources:jquery")
-#requireResource("no.ntnu.assignmentsystem.confluedit:confluedit-resources")
-<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
-
-<div id="editors">
-    <div class="editor">
-        $editorCode
+<div id="confluedit-container">
+    <div id="confluedit-editor">
+        <input type="hidden" id="taskId" value="$task-id" />
+        <input type="hidden" id="difficulty" value="$difficulty" />
+        <input type="hidden" id="effort" value="$effort" />
+        <input type="hidden" id="editable" value="$editable" />
+        #if( !$userId )
+        <input type="submit" id="confluedit-login" value="Klikk her for å logge inn" />
+        #end
+        <input type="submit" id="confluedit-start" value="Start prosjekt" />
     </div>
+
+    <code id="confluedit-xtext">
+        $editorCode
+    </code>
 </div>

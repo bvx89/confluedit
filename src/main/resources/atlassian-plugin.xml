@@ -30,7 +30,6 @@
             <parameter name="task-id" type="string" required="true"/>
             <parameter name="difficulty" type="string" required="true"/>
             <parameter name="effort" type="string" required="true"/>
-            <parameter name="editable" type="boolean" required="true"/>
         </parameters>
     </xhtml-macro>
 

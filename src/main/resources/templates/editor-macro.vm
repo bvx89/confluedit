@@ -5,14 +5,13 @@
         <input type="hidden" id="taskId" value="$task-id" />
         <input type="hidden" id="difficulty" value="$difficulty" />
         <input type="hidden" id="effort" value="$effort" />
-        <input type="hidden" id="editable" value="$editable" />
         #if( !$userId )
         <input type="submit" id="confluedit-login" value="Klikk her for å logge inn" />
         #end
         <input type="submit" id="confluedit-start" value="Start prosjekt" />
     </div>
 
-    <code id="confluedit-xtext">
-        $editorCode
+    <code id="confluedit-xemfs">
+        $xemfs
     </code>
 </div>

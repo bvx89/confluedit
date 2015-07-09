@@ -15,19 +15,15 @@ public class EditorRestResourceModel {
     private String effort;
 
     @XmlElement
-    private String editable;
-
-    @XmlElement
-    private String emfs;
+    private String xemfs;
 
     private EditorRestResourceModel() {}
 
-    public EditorRestResourceModel(String taskId, String difficulty, String effort, String editable, String emfs) {
+    public EditorRestResourceModel(String taskId, String difficulty, String effort, String xemfs) {
         this.taskId = taskId;
         this.difficulty = difficulty;
         this.effort = effort;
-        this.editable = editable;
-        this.emfs = emfs;
+        this.xemfs = xemfs;
     }
 
 
@@ -55,20 +51,12 @@ public class EditorRestResourceModel {
         this.effort = effort;
     }
 
-    public String getEditable() {
-        return editable;
-    }
-
-    public void setEditable(String editable) {
-        this.editable = editable;
-    }
-
-    public String getEmfs() {
-        return emfs;
+    public String getXEMFS() {
+        return xemfs;
     }
 
     public void setEmfs(String emfs) {
-        this.emfs = emfs;
+        this.xemfs = emfs;
     }
 
     @Override
@@ -77,8 +65,7 @@ public class EditorRestResourceModel {
                 "taskId='" + taskId + '\'' +
                 ", difficulty='" + difficulty + '\'' +
                 ", effort='" + effort + '\'' +
-                ", editable='" + editable + '\'' +
-                ", emfs='" + emfs + '\'' +
+                ", emfs='" + xemfs + '\'' +
                 '}';
     }
 }

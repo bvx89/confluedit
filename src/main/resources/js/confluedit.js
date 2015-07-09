@@ -15,7 +15,7 @@ var Confluedit = (function($, loc) {
 
 
     var initConnection = function() {
-        var emfsText = $('#confluedit-xtext').text().trim(),
+        var emfsText = $('#confluedit-xemfs').text().trim(),
             dataElements = $('#confluedit-editor').find('input[type=hidden]'),
             dataInformation = {},
             el;
@@ -25,7 +25,7 @@ var Confluedit = (function($, loc) {
             dataInformation[el.id] = el.value;
         }
 
-        dataInformation['emfs'] = emfsText;
+        dataInformation['xemfs'] = emfsText;
 
         restURL = '/' + PATH_REST;
         $.ajax({
@@ -59,7 +59,7 @@ var Confluedit = (function($, loc) {
     }
 
     createLoginURL = function() {
-        if (loginURL != null) {
+        if (loginURL !== null) {
             return loginURL;
         }
 

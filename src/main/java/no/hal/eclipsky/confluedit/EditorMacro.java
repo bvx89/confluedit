@@ -6,7 +6,6 @@ import com.atlassian.confluence.macro.MacroExecutionException;
 import com.atlassian.confluence.renderer.radeox.macros.MacroUtils;
 import com.atlassian.confluence.user.AuthenticatedUserThreadLocal;
 import com.atlassian.confluence.user.ConfluenceUser;
-import com.atlassian.confluence.user.UserAccessor;
 import com.atlassian.confluence.util.velocity.VelocityUtils;
 import org.apache.velocity.VelocityContext;
 
@@ -16,8 +15,7 @@ public class EditorMacro implements Macro {
     public static final String PARAM_ID = "task-id";
     public static final String PARAM_DIFFICULTY = "difficulty";
     public static final String PARAM_EFFORT = "effort";
-    public static final String PARAM_EDITABLE = "editable";
-    public static final String BODY_EMFS = "editorCode";
+    public static final String BODY_XEMFS = "xemfs";
     private static final String TMPL_EDITOR = "templates/editor-macro.vm";
 
     public EditorMacro() {
@@ -40,7 +38,7 @@ public class EditorMacro implements Macro {
         }
 
         contextMap.put("user-id", userId);
-        contextMap.put(BODY_EMFS, body);
+        contextMap.put(BODY_XEMFS, body);
 
         return VelocityUtils.getRenderedTemplate(TMPL_EDITOR, contextMap);
 

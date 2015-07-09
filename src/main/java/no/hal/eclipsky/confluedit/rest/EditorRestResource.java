@@ -35,7 +35,7 @@ public class EditorRestResource {
     private static final Logger log = LogManager.getLogger();
     private final static String PARAM_NAME = "projectName";
     private final static String PARAM_FORWARD = "forward";
-    private final static String PARAM_XTEXT = "emfs";
+    private final static String PARAM_XEMFS = "xemfs";
     private final static String PARAM_START_INDEX = "startIndex";
 
     private final static String FORWARD_PATH = "sourceEditor";
@@ -61,7 +61,7 @@ public class EditorRestResource {
         ConfluenceUser confluenceUser = AuthenticatedUserThreadLocal.get();
         String userId;
         if (confluenceUser == null) {
-            log.warn("Confluence User is null");
+            log.warn("Confluence User is null, must use session id");
             userId = hp.getSessionId();
         } else {
             userId = confluenceUser.getKey().getStringValue();
@@ -72,13 +72,13 @@ public class EditorRestResource {
 
         //TODO: Connect to broker to get appropriate IP/URL
         try (final CloseableHttpClient httpclient = HttpClients.createDefault()){
-            final URI eclipseURI = new URI("http://81.191.159.192:8080/ensureProject");
+            final URI eclipseURI = new URI("http://localhost:8080/ensureProject");
             HttpPost httpPost = new HttpPost(eclipseURI);
             // Add params to the getter
             List<NameValuePair> params = new ArrayList<>(3);
             params.add(new BasicNameValuePair(PARAM_NAME, constructProjectName(userId, model.getTaskId(), model.getDifficulty())));
             params.add(new BasicNameValuePair(PARAM_FORWARD, FORWARD_PATH));
-            params.add(new BasicNameValuePair(PARAM_XTEXT, model.getEmfs()));
+            params.add(new BasicNameValuePair(PARAM_XEMFS, model.getXEMFS()));
             params.add(new BasicNameValuePair(PARAM_START_INDEX, (startIndex == null ? "0" : startIndex)));
 
 
